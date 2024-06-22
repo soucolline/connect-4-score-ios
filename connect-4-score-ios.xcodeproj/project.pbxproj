@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E92414482C2773B300041AB6 /* connect_4_score_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */; };
+		E92414482C2773B300041AB6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414472C2773B300041AB6 /* App.swift */; };
 		E924144A2C2773B300041AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414492C2773B300041AB6 /* ContentView.swift */; };
 		E924144C2C2773B400041AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E924144B2C2773B400041AB6 /* Assets.xcassets */; };
 		E92414502C2773B400041AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E924144F2C2773B400041AB6 /* Preview Assets.xcassets */; };
+		E92414572C27773800041AB6 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414562C27773800041AB6 /* PanelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E92414442C2773B300041AB6 /* connect-4-score-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "connect-4-score-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connect_4_score_iosApp.swift; sourceTree = "<group>"; };
+		E92414472C2773B300041AB6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		E92414492C2773B300041AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E924144B2C2773B400041AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E924144D2C2773B400041AB6 /* connect_4_score_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = connect_4_score_ios.entitlements; sourceTree = "<group>"; };
 		E924144F2C2773B400041AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E92414562C27773800041AB6 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,9 @@
 		E92414462C2773B300041AB6 /* connect-4-score-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */,
+				E92414472C2773B300041AB6 /* App.swift */,
 				E92414492C2773B300041AB6 /* ContentView.swift */,
+				E92414562C27773800041AB6 /* PanelView.swift */,
 				E924144B2C2773B400041AB6 /* Assets.xcassets */,
 				E924144D2C2773B400041AB6 /* connect_4_score_ios.entitlements */,
 				E924144E2C2773B400041AB6 /* Preview Content */,
@@ -139,8 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92414572C27773800041AB6 /* PanelView.swift in Sources */,
 				E924144A2C2773B300041AB6 /* ContentView.swift in Sources */,
-				E92414482C2773B300041AB6 /* connect_4_score_iosApp.swift in Sources */,
+				E92414482C2773B300041AB6 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

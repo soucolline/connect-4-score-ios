@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  var body: some View {
+    HStack(spacing: 0) {
+      PanelView(playerName: "Thomas")
+        .background(.white)
+      
+      Rectangle()
+        .frame(width: 20)
+        .frame(maxHeight: .infinity)
+      
+      PanelView(playerName: "Clara")
+        .background(.white)
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
