@@ -10,14 +10,15 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     HStack(spacing: 0) {
-      PanelView(playerName: "Thomas")
+      PanelView(playerName: "Clara", color: .yellow)
         .background(.white)
       
       Rectangle()
         .frame(width: 20)
         .frame(maxHeight: .infinity)
+        .ignoresSafeArea()
       
-      PanelView(playerName: "Clara")
+      PanelView(playerName: "Thomas", color: .red)
         .background(.white)
     }
   }
