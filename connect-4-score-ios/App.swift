@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct connect_4_score_iosApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      GameView(viewModel: GameViewModel())
     }
+  }
 }
