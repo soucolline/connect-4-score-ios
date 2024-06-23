@@ -12,11 +12,18 @@ struct PanelView: View {
   
   private let playerName: String
   private let color: Color
+  private let playersTurn: Bool
   
-  init(playerName: String, color: Color, score: Binding<Int>) {
+  init(
+    playerName: String,
+    color: Color,
+    score: Binding<Int>,
+    playersTurn: Bool
+  ) {
     self.playerName = playerName
     self.color = color
     self._score = score
+    self.playersTurn = playersTurn
   }
   
   var body: some View {
@@ -34,13 +41,21 @@ struct PanelView: View {
       }
       
       VStack {
-        Text(playerName)
-          .font(.system(size: 40, design: .rounded))
+        HStack {
+          Text(playerName)
+            .font(.system(size: 40, design: .rounded))
+          
+          if playersTurn {
+            Image(systemName: "person.fill")
+              .font(.system(size: 40))
+          }
+        }
         
         Text("\(score)")
           .font(.system(size: 100, weight: .black, design: .rounded))
           .contentTransition(.numericText())
       }
+      .foregroundColor(.black)
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .contentShape(Rectangle())
@@ -66,5 +81,5 @@ struct PanelView: View {
 }
 
 #Preview {
-  PanelView(playerName: "Thomas", color: .yellow, score: .constant(0))
+  PanelView(playerName: "Thomas", color: .yellow, score: .constant(0), playersTurn: true)
 }

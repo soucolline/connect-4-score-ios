@@ -31,6 +31,7 @@ public class GameViewModel {
     }
   }
   
+  public var currentPlayer = Player.player1
   public var shouldShowWinnerAlert = false
   public var winner: Player?
   
@@ -42,6 +43,11 @@ public class GameViewModel {
   }
   
   private func checkScore(score: Int, player: Player) {
+    currentPlayer = switch currentPlayer {
+    case .player1: .player2
+    case .player2: .player1
+    }
+    
     if score >= 5 {
       winner = player
       shouldShowWinnerAlert = true

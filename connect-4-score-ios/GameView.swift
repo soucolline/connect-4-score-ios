@@ -16,16 +16,27 @@ struct GameView: View {
   
   var body: some View {
     HStack(spacing: 0) {
-      PanelView(playerName: viewModel.player1Name, color: viewModel.player1Color, score: $viewModel.player1Score)
-        .background(.white)
+      PanelView(
+        playerName: viewModel.player1Name,
+        color: viewModel.player1Color,
+        score: $viewModel.player1Score,
+        playersTurn: viewModel.currentPlayer == .player1
+      )
+      .background(.white)
       
       Rectangle()
+        .fill(.black)
         .frame(width: 20)
         .frame(maxHeight: .infinity)
         .ignoresSafeArea()
       
-      PanelView(playerName: viewModel.player2Name, color: viewModel.player2Color, score: $viewModel.player2Score)
-        .background(.white)
+      PanelView(
+        playerName: viewModel.player2Name,
+        color: viewModel.player2Color,
+        score: $viewModel.player2Score,
+        playersTurn: viewModel.currentPlayer == .player2
+      )
+      .background(.white)
     }
     .alert(isPresented: $viewModel.shouldShowWinnerAlert) {
       let playerName = switch viewModel.winner {
