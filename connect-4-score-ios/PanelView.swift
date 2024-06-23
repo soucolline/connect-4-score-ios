@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct PanelView: View {
-  @State private var score: Int = 0
+  @Binding public var score: Int
   
   private let playerName: String
   private let color: Color
   
-  init(playerName: String, color: Color) {
+  init(playerName: String, color: Color, score: Binding<Int>) {
     self.playerName = playerName
     self.color = color
+    self._score = score
   }
   
   var body: some View {
@@ -65,5 +66,5 @@ struct PanelView: View {
 }
 
 #Preview {
-  PanelView(playerName: "Thomas", color: .yellow)
+  PanelView(playerName: "Thomas", color: .yellow, score: .constant(0))
 }

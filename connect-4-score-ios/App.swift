@@ -11,7 +11,7 @@ import SwiftUI
 struct connect_4_score_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView(viewModel: GameViewModel())
         }
     }
 }
