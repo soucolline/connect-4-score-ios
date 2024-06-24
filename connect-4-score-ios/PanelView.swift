@@ -13,17 +13,23 @@ struct PanelView: View {
   private let playerName: String
   private let color: Color
   private let playersTurn: Bool
+  private let numberOfRounds: Int
+  private let onTap: (Int) -> Void
   
   init(
     playerName: String,
     color: Color,
     score: Binding<Int>,
-    playersTurn: Bool
+    playersTurn: Bool,
+    numberOfRounds: Int,
+    onTap: @escaping (Int) -> Void
   ) {
     self.playerName = playerName
     self.color = color
     self._score = score
     self.playersTurn = playersTurn
+    self.numberOfRounds = numberOfRounds
+    self.onTap = onTap
   }
   
   var body: some View {
@@ -31,11 +37,11 @@ struct PanelView: View {
       GeometryReader { proxy in
         LinearGradient(gradient: Gradient(colors: [color, color]), startPoint: .bottom, endPoint: .top)
           .mask(
-              VStack {
-                  Spacer()
-                  Rectangle()
-                    .frame(height: CGFloat(score) / 5 * proxy.size.height + (score == 0 ? 0 : 10))
-              }
+            VStack {
+              Spacer()
+              Rectangle()
+                .frame(height: CGFloat(score) / CGFloat(numberOfRounds) * proxy.size.height + (score == 0 ? 0 : 10))
+            }
           )
           .ignoresSafeArea()
       }
@@ -61,19 +67,15 @@ struct PanelView: View {
     .contentShape(Rectangle())
     .ignoresSafeArea()
     .onTapGesture {
-      guard score < 5 else { return }
-      withAnimation(.bouncy) {
-        score += 1
-      }
+      guard score < numberOfRounds else { return }
+      onTap(score + 1)
     }
     .gesture(
       DragGesture(minimumDistance: 30, coordinateSpace: .local)
         .onEnded { value in
           if value.translation.width > 0 && abs(value.translation.height) < 30 {
             guard score > 0 else { return }
-            withAnimation(.bouncy) {
-              score -= 1
-            }
+            onTap(score - 1)
           }
         }
     )
@@ -81,5 +83,12 @@ struct PanelView: View {
 }
 
 #Preview {
-  PanelView(playerName: "Thomas", color: .yellow, score: .constant(0), playersTurn: true)
+  PanelView(
+    playerName: "Thomas",
+    color: .yellow,
+    score: .constant(2),
+    playersTurn: true,
+    numberOfRounds: 5,
+    onTap: { _ in }
+  )
 }
