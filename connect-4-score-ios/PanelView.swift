@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Vortex
 
 struct PanelView: View {
   @Binding public var score: Int
+  @Binding public var isWinner: Bool
   
   private let playerName: String
   private let color: Color
@@ -20,6 +22,7 @@ struct PanelView: View {
     playerName: String,
     color: Color,
     score: Binding<Int>,
+    isWinner: Binding<Bool>,
     playersTurn: Bool,
     numberOfRounds: Int,
     onTap: @escaping (Int) -> Void
@@ -27,6 +30,7 @@ struct PanelView: View {
     self.playerName = playerName
     self.color = color
     self._score = score
+    self._isWinner = isWinner
     self.playersTurn = playersTurn
     self.numberOfRounds = numberOfRounds
     self.onTap = onTap
@@ -62,6 +66,17 @@ struct PanelView: View {
           .contentTransition(.numericText())
       }
       .foregroundColor(.black)
+      
+      if isWinner {
+        VortexView(.fireworks, targetFrameRate: 120) {
+            Circle()
+                .fill(.white)
+                .frame(width: 32)
+                .blur(radius: 5)
+                .blendMode(.plusLighter)
+                .tag("circle")
+        }
+      }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .contentShape(Rectangle())
@@ -87,6 +102,7 @@ struct PanelView: View {
     playerName: "Thomas",
     color: .yellow,
     score: .constant(2),
+    isWinner: .constant(false),
     playersTurn: true,
     numberOfRounds: 5,
     onTap: { _ in }
