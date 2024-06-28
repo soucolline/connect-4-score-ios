@@ -14,7 +14,6 @@
 		E92414572C27773800041AB6 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414562C27773800041AB6 /* PanelView.swift */; };
 		E924145B2C28682600041AB6 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E924145A2C28682600041AB6 /* SettingsScreen.swift */; };
 		E95253762C28A8CE005210D0 /* PlayerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95253752C28A8CE005210D0 /* PlayerColor.swift */; };
-		E95253822C29F9AA005210D0 /* Vortex in Frameworks */ = {isa = PBXBuildFile; productRef = E95253812C29F9AA005210D0 /* Vortex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95253822C29F9AA005210D0 /* Vortex in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +95,6 @@
 			);
 			name = "connect-4-score-ios";
 			packageProductDependencies = (
-				E95253812C29F9AA005210D0 /* Vortex */,
 			);
 			productName = "connect-4-score-ios";
 			productReference = E92414442C2773B300041AB6 /* connect-4-score-ios.app */;
@@ -128,7 +125,6 @@
 			);
 			mainGroup = E924143B2C2773B300041AB6;
 			packageReferences = (
-				E95253802C29F9AA005210D0 /* XCRemoteSwiftPackageReference "Vortex" */,
 			);
 			productRefGroup = E92414452C2773B300041AB6 /* Products */;
 			projectDirPath = "";
@@ -391,25 +387,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E95253802C29F9AA005210D0 /* XCRemoteSwiftPackageReference "Vortex" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Vortex";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E95253812C29F9AA005210D0 /* Vortex */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E95253802C29F9AA005210D0 /* XCRemoteSwiftPackageReference "Vortex" */;
-			productName = Vortex;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E924143C2C2773B300041AB6 /* Project object */;
 }

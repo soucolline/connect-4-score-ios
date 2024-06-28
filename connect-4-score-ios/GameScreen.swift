@@ -29,9 +29,6 @@ struct GameScreen: View {
   @State private var player1Score = 0
   @State private var player2Score = 0
   
-  @State private var isPlayer1Winner = false
-  @State private var isPlayer2Winner = false
-  
   init() {}
   
   var body: some View {
@@ -41,7 +38,6 @@ struct GameScreen: View {
           playerName: player1Name,
           color: PlayerColor.initFromString(value: player1Color).color,
           score: $player1Score,
-          isWinner: $isPlayer1Winner,
           playersTurn: currentPlayer == .player1,
           numberOfRounds: numberOfRounds,
           onTap: { newValue in
@@ -63,7 +59,6 @@ struct GameScreen: View {
           playerName: player2Name,
           color: PlayerColor.initFromString(value: player2Color).color,
           score: $player2Score,
-          isWinner: $isPlayer2Winner,
           playersTurn: currentPlayer == .player2,
           numberOfRounds: numberOfRounds,
           onTap: { newValue in
@@ -124,14 +119,10 @@ struct GameScreen: View {
     }
     
     if score >= numberOfRounds {
-      switch player {
-      case .player1: isPlayer1Winner = true
-      case .player2: isPlayer2Winner = true
-      }
       winner = player
       
       Task {
-        try await Task.sleep(nanoseconds: 2_000_000_000)
+        try await Task.sleep(nanoseconds: 500_000_000)
         shouldShowWinnerAlert = true
       }
     }
@@ -142,8 +133,6 @@ struct GameScreen: View {
     player2Score = 0
     winner = nil
     shouldShowWinnerAlert = false
-    isPlayer1Winner = false
-    isPlayer2Winner = false
   }
 }
 
