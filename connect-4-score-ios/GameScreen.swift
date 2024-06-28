@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Vortex
 
 // TODO: move elsewhere
 public enum Player {
