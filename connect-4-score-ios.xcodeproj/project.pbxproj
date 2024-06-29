@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E92414482C2773B300041AB6 /* connect_4_score_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */; };
-		E924144A2C2773B300041AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414492C2773B300041AB6 /* ContentView.swift */; };
+		E92414482C2773B300041AB6 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414472C2773B300041AB6 /* App.swift */; };
+		E924144A2C2773B300041AB6 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414492C2773B300041AB6 /* GameScreen.swift */; };
 		E924144C2C2773B400041AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E924144B2C2773B400041AB6 /* Assets.xcassets */; };
 		E92414502C2773B400041AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E924144F2C2773B400041AB6 /* Preview Assets.xcassets */; };
+		E92414572C27773800041AB6 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92414562C27773800041AB6 /* PanelView.swift */; };
+		E924145B2C28682600041AB6 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E924145A2C28682600041AB6 /* SettingsScreen.swift */; };
+		E95253762C28A8CE005210D0 /* PlayerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95253752C28A8CE005210D0 /* PlayerColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E92414442C2773B300041AB6 /* connect-4-score-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "connect-4-score-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = connect_4_score_iosApp.swift; sourceTree = "<group>"; };
-		E92414492C2773B300041AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E92414472C2773B300041AB6 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		E92414492C2773B300041AB6 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		E924144B2C2773B400041AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E924144D2C2773B400041AB6 /* connect_4_score_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = connect_4_score_ios.entitlements; sourceTree = "<group>"; };
 		E924144F2C2773B400041AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E92414562C27773800041AB6 /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		E924145A2C28682600041AB6 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		E95253752C28A8CE005210D0 /* PlayerColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +58,11 @@
 		E92414462C2773B300041AB6 /* connect-4-score-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E92414472C2773B300041AB6 /* connect_4_score_iosApp.swift */,
-				E92414492C2773B300041AB6 /* ContentView.swift */,
+				E92414472C2773B300041AB6 /* App.swift */,
+				E92414492C2773B300041AB6 /* GameScreen.swift */,
+				E92414562C27773800041AB6 /* PanelView.swift */,
+				E924145A2C28682600041AB6 /* SettingsScreen.swift */,
+				E95253752C28A8CE005210D0 /* PlayerColor.swift */,
 				E924144B2C2773B400041AB6 /* Assets.xcassets */,
 				E924144D2C2773B400041AB6 /* connect_4_score_ios.entitlements */,
 				E924144E2C2773B400041AB6 /* Preview Content */,
@@ -85,6 +94,8 @@
 			dependencies = (
 			);
 			name = "connect-4-score-ios";
+			packageProductDependencies = (
+			);
 			productName = "connect-4-score-ios";
 			productReference = E92414442C2773B300041AB6 /* connect-4-score-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +124,8 @@
 				Base,
 			);
 			mainGroup = E924143B2C2773B300041AB6;
+			packageReferences = (
+			);
 			productRefGroup = E92414452C2773B300041AB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E924144A2C2773B300041AB6 /* ContentView.swift in Sources */,
-				E92414482C2773B300041AB6 /* connect_4_score_iosApp.swift in Sources */,
+				E924145B2C28682600041AB6 /* SettingsScreen.swift in Sources */,
+				E95253762C28A8CE005210D0 /* PlayerColor.swift in Sources */,
+				E92414572C27773800041AB6 /* PanelView.swift in Sources */,
+				E924144A2C2773B300041AB6 /* GameScreen.swift in Sources */,
+				E92414482C2773B300041AB6 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,13 +283,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "connect-4-score-ios/connect_4_score_ios.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"connect-4-score-ios/Preview Content\"";
-				DEVELOPMENT_TEAM = XDX42S5M9N;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XDX42S5M9N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Connect 4 Score";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -282,20 +301,23 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zlatan.connect-4-score-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "connect-4-score_dev";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -305,13 +327,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "connect-4-score-ios/connect_4_score_ios.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"connect-4-score-ios/Preview Content\"";
-				DEVELOPMENT_TEAM = XDX42S5M9N;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = XDX42S5M9N;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Connect 4 Score";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -320,20 +345,23 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zlatan.connect-4-score-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "connect-4-score_dev";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
