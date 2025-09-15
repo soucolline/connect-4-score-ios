@@ -31,76 +31,71 @@ struct GameScreen: View {
   init() {}
   
   var body: some View {
-    ZStack {
-      HStack(spacing: 0) {
-        PanelView(
-          playerName: player1Name,
-          color: PlayerColor.initFromString(value: player1Color).color,
-          score: $player1Score,
-          playersTurn: currentPlayer == .player1,
-          numberOfRounds: numberOfRounds,
-          onTap: { newValue in
-            withAnimation(.bouncy) {
-              player1Score = newValue
+    NavigationStack {
+      ZStack {
+        HStack(spacing: 0) {
+          PanelView(
+            playerName: player1Name,
+            color: PlayerColor.initFromString(value: player1Color).color,
+            score: $player1Score,
+            playersTurn: currentPlayer == .player1,
+            numberOfRounds: numberOfRounds,
+            onTap: { newValue in
+              withAnimation(.bouncy) {
+                player1Score = newValue
+              }
+              checkScore(score: newValue, player: .player1)
             }
-            checkScore(score: newValue, player: .player1)
-          }
-        )
-        .background(.white)
-        
-        Rectangle()
-          .fill(.black)
-          .frame(width: 20)
-          .frame(maxHeight: .infinity)
-          .ignoresSafeArea()
-        
-        PanelView(
-          playerName: player2Name,
-          color: PlayerColor.initFromString(value: player2Color).color,
-          score: $player2Score,
-          playersTurn: currentPlayer == .player2,
-          numberOfRounds: numberOfRounds,
-          onTap: { newValue in
-            withAnimation(.bouncy) {
-              player2Score = newValue
+          )
+          .background(.white)
+          
+          Rectangle()
+            .fill(.black)
+            .frame(width: 20)
+            .frame(maxHeight: .infinity)
+            .ignoresSafeArea()
+          
+          PanelView(
+            playerName: player2Name,
+            color: PlayerColor.initFromString(value: player2Color).color,
+            score: $player2Score,
+            playersTurn: currentPlayer == .player2,
+            numberOfRounds: numberOfRounds,
+            onTap: { newValue in
+              withAnimation(.bouncy) {
+                player2Score = newValue
+              }
+              checkScore(score: newValue, player: .player2)
             }
-            checkScore(score: newValue, player: .player2)
-          }
-        )
-        .background(.white)
-      }
-      
-      HStack {
-        Spacer()
-        VStack {
-          Button(action: {
-            shouldShowSettings = true
-          }, label: {
-            Image(systemName: "gearshape.fill")
-          })
-          .font(.system(size: 40))
-          .foregroundColor(.black)
-          Spacer()
+          )
+          .background(.white)
         }
-        .padding()
       }
-    }
-    .alert(isPresented: $shouldShowWinnerAlert) {
-      let playerName = switch winner {
-      case .player1: player1Name
-      case .player2: player2Name
-      case .none: ""
+      .alert(isPresented: $shouldShowWinnerAlert) {
+        let playerName = switch winner {
+        case .player1: player1Name
+        case .player2: player2Name
+        case .none: ""
+        }
+        
+        return Alert(
+          title: Text("Winner"),
+          message: Text("\(playerName) won"),
+          dismissButton: .default(Text("Replay"), action: {
+            withAnimation {
+              resetGame()
+            }
+          })
+        )
       }
-      
-      return Alert(
-        title: Text("Winner"),
-        message: Text("\(playerName) won"),
-        dismissButton: .default(Text("Replay"), action: {
-          withAnimation {
-            resetGame()
-          }
+      .toolbar {
+        Button(action: {
+          shouldShowSettings = true
+        }, label: {
+          Image(systemName: "gearshape.fill")
+            .foregroundColor(.black)
         })
-      )
+      }
     }
     .sheet(isPresented: $shouldShowSettings) {
       SettingsScreen(
